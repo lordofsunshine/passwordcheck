@@ -12,7 +12,7 @@
 });
 
 class Passcode {
-    code = 2004; //passcode
+    code = 2004; //enter your 4 digit password
     unlockTimeout = null;
 
     constructor(el) {
@@ -87,16 +87,15 @@ class Passcode {
     unlock() {
         this.form.classList.add("passcode--granted");
         this.unlockTimeout = setTimeout(() => {
-            this.form.reset();
-            this.unlockTimeout = setTimeout(this.reset.bind(this),750);
-        },500);
+            window.location.href = 'https://example.com'; //insert your url here
+        }, 500);
     }
     unlockDeny() {
         this.form.classList.add("passcode--denied");
         this.unlockTimeout = setTimeout(this.reset.bind(this),500);
     }
 }
-//made by girlorboy</script>
+</script>
 <body>
 <form class="passcode" onsubmit="">
 	<label for="digit1" class="passcode__sr">1st Digit</label>
